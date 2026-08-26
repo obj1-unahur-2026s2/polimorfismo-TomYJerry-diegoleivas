@@ -13,8 +13,18 @@ object tom {
 
     method comer(unRaton) {
         energia= energia +12+unRaton.peso()
+
+    
   
 }
+  method puedeCazar(unaDistancia) =  energia - unaDistancia / 2  < energia
+  method cazar(unRaton , unaDistancia) { 
+    if(self.puedeCazar(unaDistancia)) self.comer(unRaton)
+
+    
+  }
+  
+
 
 }
 
