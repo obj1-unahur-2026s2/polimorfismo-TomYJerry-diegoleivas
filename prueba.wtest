@@ -12,13 +12,54 @@ describe "caso de prueba primera parte" {
     assert.equals(102, tom.energia())
 
     
-  }//entiendo que esta mal el enunciado
+  }
   test "Si corre 24 metros, entonces su velocidad máxima pasa a ser 14 (su energía es 90)" {
+    tom.comer(jerry)
     tom.correr(24)
     assert.equals(14, tom.velocidadMaxima())
     assert.equals(90, tom.energia())
 
 
   }
+
+  test "Si come a Nibbles, pasa a tener de velocidad máxima 18.7 (su energía es 137)" {
+
+    tom.comer(jerry)
+    tom.correr(24)
+    tom.comer(nibbles)
+    assert.equals(18.7, tom.velocidadMaxima())
+    assert.equals(137, tom.energia())
+
+    
+  }
+
+  test "si Jerry cumple años (3 años de edad), y luego Tom lo vuelve a comer, pasaría a tener 25.9 (su energia es 209)" {
+   tom.comer(jerry)
+    tom.correr(24)
+    tom.comer(nibbles)
+   jerry.cumplirAnios()
+   tom.comer(jerry)
+   
+   
+   assert.equals(25.9, tom.velocidadMaxima())
+   assert.equals(209, tom.energia())
+
+
+    
+  }
+test "si corre 38 metros su velocidad pasa a ser 24 (su energia es 190)" {
+  tom.comer(jerry)
+    tom.correr(24)
+    tom.comer(nibbles)
+   jerry.cumplirAnios()
+   tom.comer(jerry)
+   tom.correr(38)
+   assert.equals(24, tom.velocidadMaxima())
+   assert.equals(190, tom.energia())
+
+
+  
+}
+
 
 }
